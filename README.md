@@ -1,3 +1,7 @@
+ ## TODO
+
+ Ajouter des variables sass global 
+
 # base
 
 ## Project setup
