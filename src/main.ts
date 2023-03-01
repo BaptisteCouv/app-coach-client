@@ -12,13 +12,8 @@ import { createApp } from "vue";
 
 // Plugins
 import { registerPlugins } from "@/plugins";
-import { createI18n } from "vue-i18n";
 
-const i18n = createI18n({
-  locale: "az",
-});
-
-const app = createApp(App).use(i18n);
+const app = createApp(App)
 
 registerPlugins(app);
 
