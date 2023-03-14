@@ -13,7 +13,7 @@
 export default {};
 </script>
 <style lang="scss" scoped>
-// $color-primary: #2388ed;
+$color-primary: #2388ed;
 
 .title-up {
   font-size: 35px;
