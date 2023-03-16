@@ -8,8 +8,8 @@
         elevation="0"
         min-width="200"
         max-width="320"
-        v-for="card in cards"
-        :key="card"
+        v-for="card, i in cards"
+        :key="i"
       >
         <template v-slot:title>
           <div class="d-flex flex-column align-center">

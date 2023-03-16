@@ -1,21 +1,24 @@
 <template>
-  <div class="container-presentation-text">
-    <v-row>
-      <v-col cols="2"></v-col>
-      <v-col cols="4">
-        <div class="container-promo-detail d-flex justify-center align-center">
-          {{ detailpromo }}
-        </div>
-      </v-col>
-      <v-col cols="4">
-        <div class="container-text-detail d-flex justify-center flex-column">
-          <div class="title text-h4">{{ textDetail }}</div>
-        </div>
-      </v-col>
-      <v-col cols="2"></v-col>
-    </v-row>
+  <div class="container-presentation-space">
+    <div class="container-presentation-text">
+      <v-row>
+        <v-col cols="2"></v-col>
+        <v-col cols="4">
+          <div
+            class="container-promo-detail d-flex justify-center align-center"
+          >
+            {{ detailpromo }}
+          </div>
+        </v-col>
+        <v-col cols="4">
+          <div class="container-text-detail d-flex justify-center flex-column">
+            <div class="title text-h4">{{ textDetail }}</div>
+          </div>
+        </v-col>
+        <v-col cols="2"></v-col>
+      </v-row>
+    </div>
   </div>
-  <div class="container-presentation-space"></div>
 </template>
 
 <script lang="ts">
@@ -32,13 +35,12 @@ export default {
 $color-primary: #2388ed;
 .container-presentation-text {
   background-color: $color-primary;
-  background-color: #2388ed;
   transform: rotate(-5deg);
   width: 130vw !important;
   left: -250px;
   position: absolute;
 }
-.container-presentation-space{
+.container-presentation-space {
   height: 400px;
 }
 .container-promo-detail {

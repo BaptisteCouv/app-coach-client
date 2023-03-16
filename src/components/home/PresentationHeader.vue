@@ -1,7 +1,7 @@
 <template>
   <div class="presentation-header d-flex align-end">
-    <DiagonalStyle positionX="left" positionY="bottom"  color="white"/>
-    
+    <DiagonalStyle positionX="left" positionY="bottom" color="white" />
+
     <div class="bloc-presentation-title text-center">
       <div class="title-up text-uppercase">Bienvenue sur</div>
       <div class="title text-uppercase">Mon Coach'ez Moi</div>
@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts">
-import DiagonalStyle from '@/layouts/default/DiagonalStyle.vue';
+import DiagonalStyle from "@/layouts/default/DiagonalStyle.vue";
 
 export default { components: { DiagonalStyle } };
 </script>
@@ -24,7 +24,7 @@ $color-primary: #2388ed;
   }
   .title {
     font-size: 20px !important;
-    letter-spacing: 10px !important;;
+    letter-spacing: 10px !important;
   }
   .title-desc {
     font-size: 15px !important;
@@ -62,6 +62,7 @@ $color-primary: #2388ed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: inherit;
 }
 .bloc-presentation-title {
   position: absolute;

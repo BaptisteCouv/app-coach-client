@@ -34,6 +34,10 @@ export default {
 </script>
 <style lang="scss" scoped>
 $color-primary: #2388ed;
+
+.container-picture-detail {
+  height: 400px;
+}
 .container-presentation-text {
   background-color: white;
 }
@@ -42,10 +46,11 @@ $color-primary: #2388ed;
   .title {
     font-weight: 500 !important;
     letter-spacing: 5px !important;
-    color:  $color-primary;
+    color:  #2d2d2d;
   }
   .desc {
-    color:  $color-primary;
+    color:  #2d2d2d;
   }
 }
+
 </style>
