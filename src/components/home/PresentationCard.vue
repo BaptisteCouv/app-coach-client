@@ -1,5 +1,5 @@
 <template>
-  <div class="container-presentation-card d-flex flex-column align-center">
+  <div class="container-presentation-card d-flex flex-column align-center mb-16">
     <h3>BONJOUR</h3>
     <h1 class="mt-2 mb-8">POURQUOI FAIRE APPEL À MON COACH’EZ MOI ?</h1>
     <div class="container-presentation-card--cards d-flex">

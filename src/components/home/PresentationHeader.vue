@@ -1,6 +1,7 @@
 <template>
   <div class="presentation-header d-flex align-end">
-    <DiagonalStyle position="left" color="white"/>
+    <DiagonalStyle positionX="left" positionY="bottom"  color="white"/>
+    
     <div class="bloc-presentation-title text-center">
       <div class="title-up text-uppercase">Bienvenue sur</div>
       <div class="title text-uppercase">Mon Coach'ez Moi</div>

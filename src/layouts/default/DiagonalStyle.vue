@@ -1,12 +1,13 @@
 <template>
-  <div v-if="position === 'right'" :style="'border-bottom: 20vh solid '+ color" class="diagonal-style right"></div>
-  <div v-else :style="'border-bottom: 20vh solid '+ color" class="diagonal-style left"></div>
+  <div v-if="positionX === 'right'" :style="'border-'+ positionY +': 20vh solid '+ color" class="diagonal-style right"></div>
+  <div v-else :style="'border-'+ positionY +': 20vh solid '+ color" class="diagonal-style left"></div>
 </template>
 
 <script lang="ts">
 export default {
   props: {
-    position: String,
+    positionX: String,
+    positionY: String,
     color: String,
   },
 };
