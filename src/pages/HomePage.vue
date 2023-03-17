@@ -1,9 +1,9 @@
 <template>
-  <PresentationHeader></PresentationHeader>
-  <PresentationCard></PresentationCard>
-  <PresentationServices></PresentationServices>
-  <PresentationTextDetail></PresentationTextDetail>
-  <PresentationSquare></PresentationSquare>
+  <PresentationHeader />
+  <PresentationCard />
+  <PresentationServices />
+  <PresentationTextDetail />
+  <PresentationSquare />
 </template>
 
 <script lang="ts" setup>

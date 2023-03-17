@@ -6,6 +6,14 @@ const routes = [
     path: '/',
     component: () => import('@/pages/HomePage.vue'),
   },
+  {
+    path: '/mon-coach',
+    component: () => import('@/pages/MyCoach.vue'),
+  },
+  {
+    path: '/tarif',
+    component: () => import('@/pages/Tarifs.vue'),
+  }
 ]
 
 const router = createRouter({
