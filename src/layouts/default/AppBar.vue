@@ -15,9 +15,13 @@
       <template v-slot:append v-if="!$vuetify.display.xs">
         <v-btn @click="homeRouter()"> Accueil</v-btn>
         <v-btn @click="myCoachRouter()"> Mon coach</v-btn>
-        <v-btn> Mes tarifs</v-btn>
-        <v-btn> Me contacter</v-btn>
-        <v-btn icon title="Instagram Mon Coach'ez Moi">
+        <v-btn @click="tarifsRouter()"> Mes tarifs</v-btn>
+        <v-btn @click="contactRouter()"> Me contacter</v-btn>
+        <v-btn
+          icon
+          title="Instagram Mon Coach'ez Moi"
+          @click="openInstagramLink()"
+        >
           <v-icon>mdi-instagram</v-icon>
         </v-btn>
         <v-btn icon title="connexion">
@@ -38,10 +42,10 @@
         <v-list-item @click="myCoachRouter()">
           <v-icon icon="mdi-weight-lifter" class="mr-2"></v-icon> Mon coach
         </v-list-item>
-        <v-list-item>
+        <v-list-item @click="tarifsRouter()">
           <v-icon icon="mdi-currency-eur" class="mr-2"></v-icon> Mes tarifs
         </v-list-item>
-        <v-list-item>
+        <v-list-item @click="contactRouter()">
           <v-icon icon="mdi-phone-message" class="mr-2"></v-icon> Me contacter
         </v-list-item>
       </v-list>
@@ -64,12 +68,15 @@ export default {
     myCoachRouter() {
       this.$router.push("/mon-coach");
     },
+    tarifsRouter() {
+      this.$router.push("/tarif");
+    },
+    contactRouter() {
+      this.$router.push("/me-contacter");
+    },
+    openInstagramLink() {
+      window.open("https://www.instagram.com/mon_coach_ez_moi/");
+    },
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.v-layout {
-  margin-bottom: 76px;
-}
-</style>

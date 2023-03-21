@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@mdi/font": "7.0.96",
+    "animate.css": "^4.1.1",
     "core-js": "^3.8.3",
+    "gsap": "^3.11.5",
     "roboto-fontface": "*",
     "vue": "^3.2.13",
     "vue-router": "^4.0.0",

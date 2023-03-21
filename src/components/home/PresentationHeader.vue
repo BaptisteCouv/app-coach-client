@@ -5,7 +5,11 @@
     <div class="bloc-presentation-title text-center">
       <div class="title-up text-uppercase">Bienvenue sur</div>
       <div class="title text-uppercase">Mon Coach'ez Moi</div>
-      <div class="title-desc text-uppercase">Votre coach personnel</div>
+      <section class="animation">
+        <div class="title-desc text-uppercase first"><div>Votre coach personnel</div></div>
+        <div class="title-desc text-uppercase second"><div>Entraîneur personnel certifié</div></div>
+        <div class="title-desc text-uppercase third"><div>Conseil en développement sportif</div></div>
+      </section>
     </div>
   </div>
 </template>
@@ -32,13 +36,13 @@ $color-primary: #2388ed;
 }
 
 .title-up {
-  font-size: 35px;
+  font-size: 45px;
   color: white;
   font-weight: 400;
   letter-spacing: 13px;
 }
 .title {
-  font-size: 70px;
+  font-size: 95px;
   color: white;
   font-weight: 700;
   letter-spacing: 13px;
@@ -70,4 +74,35 @@ $color-primary: #2388ed;
   left: 0;
   right: 0;
 }
+
+.animation {
+  height:50px;
+  overflow:hidden;
+  margin-left: 1rem;
+}
+
+.animation > div > div {
+  padding: 0.25rem 0.75rem;
+  height:2.81rem;
+  margin-bottom: 2.81rem;
+  display:inline-block;
+}
+
+.animation div:first-child {
+  animation: text-animation 15s infinite;
+}
+
+@keyframes text-animation {
+  0% {margin-top: 0;}
+  10% {margin-top: 0;}
+  20% {margin-top: -5.62rem;}
+  30% {margin-top: -5.62rem;}
+  40% {margin-top: -11.24rem;}
+  60% {margin-top: -11.24rem;}
+  70% {margin-top: -5.62rem;}
+  80% {margin-top: -5.62rem;}
+  90% {margin-top: 0;}
+  100% {margin-top: 0;}
+}
+
 </style>

@@ -4,7 +4,10 @@
       <v-row>
         <v-col cols="3">
           <div class="logo">
-            <v-img width="100" src="@/assets/img/logo-mon-coach-ez-moi-white.png"></v-img>
+            <v-img
+              width="100"
+              src="@/assets/img/logo-mon-coach-ez-moi-white.png"
+            ></v-img>
           </div>
         </v-col>
         <v-col cols="9" class="d-flex align-center justify-space-between">

@@ -1,8 +1,8 @@
 <template>
-  <AppBar></AppBar>
+  <AppBar />
   <v-app v-if="isLoading">
     <router-view />
-    <Footer></Footer>
+    <Footer v-if="$route.name !== 'tarif'" />
   </v-app>
   <div v-else class="loading d-flex justify-center align-center flex-column">
     <v-progress-circular
@@ -10,9 +10,7 @@
       :size="150"
       color="white"
     ></v-progress-circular>
-    <div class="text mt-6" color="white">
-      Chargement ...
-    </div>
+    <div class="text mt-6" color="white">Chargement ...</div>
   </div>
 </template>
 

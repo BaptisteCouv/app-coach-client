@@ -1,4 +1,5 @@
 <template>
+  <MarginHeaderApp />
   <PresentationHeader />
   <PresentationCard />
   <PresentationServices />
@@ -12,6 +13,7 @@ import PresentationCard from "@/components/home/PresentationCard.vue";
 import PresentationTextDetail from "@/components/home/PresentationTextDetail.vue";
 import PresentationServices from "@/components/home/PresentationServices.vue";
 import PresentationSquare from "@/components/home/PresentationSquare.vue";
+import MarginHeaderApp from "@/layouts/default/MarginHeaderApp.vue";
 </script>
 
 <style lang="scss" scoped></style>
