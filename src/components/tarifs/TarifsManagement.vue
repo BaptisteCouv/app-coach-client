@@ -80,7 +80,7 @@
                           :key="ii"
                           :style="{ width: 100 / item.children.length + '%' }"
                           @click="
-                            getTotalPrice(child.promoPrice, item.id, child.id)
+                            getTotalPrice(item.id, child.id)
                           "
                           >{{ child.title }}</v-btn
                         >
@@ -277,7 +277,7 @@ export default {
           child.children.forEach((item) => (item.isActive = false));
           this.toggleSeance = -1;
           this.toggleMouth = -1;
-          this.animateValue(0,0);
+          this.animateValue(0, 0);
         });
       });
     },
@@ -298,50 +298,60 @@ export default {
       };
       window.requestAnimationFrame(step);
     },
+
     setDisplayMode(parentId: string) {
-      this.typeContrats.forEach((element) => {
-        element.children.forEach((child) => {
-          if (child.id === parentId) {
-            if (child.isActive) {
-              this.animateValue(0, 0);
-              child.isActive = false;
-              child.children.forEach((item) => (item.isActive = false));
-            } else {
-              if (this.toggleSeance >= 0) {
-                let mode = child.children[this.toggleSeance];
-                mode.isActive = true;
-                this.animateValue(mode.promoPrice, mode.initialPrice);
-              }
-              child.isActive = true;
-            }
-          } else {
-            child.children.forEach((item) => (item.isActive = false));
+      const typeContrats = this.typeContrats;
+      const toggleSeance = this.toggleSeance;
+
+      typeContrats.forEach((element) => {
+        const children = element.children;
+
+        children.forEach((child) => {
+          if (child.id !== parentId) {
+            const childItems = child.children;
+            childItems.forEach((item) => (item.isActive = false));
             child.isActive = false;
+            return;
+          }
+
+          if (child.isActive) {
+            this.animateValue(0, 0);
+            const childItems = child.children;
+            childItems.forEach((item) => (item.isActive = false));
+            child.isActive = false;
+          } else {
+            if (toggleSeance >= 0) {
+              const mode = child.children[toggleSeance];
+              mode.isActive = true;
+              this.animateValue(mode.promoPrice, mode.initialPrice);
+            }
+            child.isActive = true;
           }
         });
       });
     },
-    getTotalPrice(priceNet: number, parentId: string, childId: string) {
-      this.typeContrats.forEach((element) => {
-        const isElement = element.children.find(
-          (child) => child.id === parentId
-        );
-        if (isElement) {
-          isElement.children.forEach((element) => {
-            if (element.id === childId) {
-              if (element.isActive) {
-                this.animateValue(0, 0);
-                element.isActive = false;
-              } else {
-                this.animateValue(element.promoPrice, element.initialPrice);
-                element.isActive = true;
-              }
-            } else {
-              element.isActive = false;
+    getTotalPrice(parentId: string, childId: string) {
+      let isFound = false;
+      for (const parent of this.typeContrats) {
+        const isParent = parent.children.find((child) => child.id === parentId);
+        if (isParent) {
+          for (const child of isParent.children) {
+            if (child.id === childId) {
+              this.animateValue(
+                child.isActive ? 0 : child.promoPrice,
+                child.initialPrice
+              );
+              child.isActive = !child.isActive;
+              isFound = true;
+              break;
             }
-          });
+            child.isActive = false;
+          }
         }
-      });
+        if (isFound) {
+          break;
+        }
+      }
     },
   },
 };
