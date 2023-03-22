@@ -367,4 +367,5 @@ export default {
 .v-footer {
   display: none;
 }
+
 </style>
